@@ -23,4 +23,11 @@ describe('FindMatches', function(){
       expect(arrContainer.findThemAll.length).toEqual(0);
     });
   });
+
+  describe('Returns from array with no matches', function() {
+    it('Should return "undefined" if empty array', () => {
+      let result = arrContainer.findThemAll();
+      expect(arrContainer.findThemAll()).toEqual(undefined)
+    })
+  })
 });

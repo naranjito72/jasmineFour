@@ -4,6 +4,8 @@ class FindMatches {
         this.arrElem = arrElem;
     }
     findThemAll() {
-        return [...new Set(this.arrElem)].sort((a, b) => a - b).filter((value, i, newArr) => newArr[i] == newArr[i]);
+        let result = this.arrElem.sort((a, b) => a - b).filter((value, i, newArr) => newArr[i] === newArr[i + 1]);
+        (result.length == 0) ? result = undefined : result = [...new Set(result)];
+        return result;
     }
 }
