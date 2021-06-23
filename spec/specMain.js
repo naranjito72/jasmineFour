@@ -26,8 +26,23 @@ describe('FindMatches', function(){
 
   describe('Returns from array with no matches', function() {
     it('Should return "undefined" if empty array', () => {
-      let result = arrContainer.findThemAll();
-      expect(arrContainer.findThemAll()).toEqual(undefined)
-    })
-  })
+      expect(arrContainer.findThemAll()).toEqual(undefined);
+    });
+  });
+
+  describe('Returns from an array with matches', () => {
+    it('Shoukld return an array of numbers', () => {
+      let containerOne = new FindMatches(arrNumTwo);
+      expect(containerOne.findThemAll()).toEqual([1, 2, 3]);
+    });
+  });
+
+ describe('Our "this" inside the class', function(){
+  it('Determinates that "this.arrElem" is an array of elements', function(){
+    expect(arrContainer.getArrElem()).toEqual(arrNumOne);
+    expect(arrContainer.getArrElem()).not.toBe(null);
+    expect(Array.isArray(arrContainer.getArrElem())).toBe(true);
+  });
+ });
+
 });
