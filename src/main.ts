@@ -3,6 +3,8 @@ class FindMatches {
   public arrElem: any[];
   constructor(arrElem: any[]){
     this.arrElem = arrElem;
+    // check if is object or array
+      (this.arrElem.constructor !== Array) ? this.arrElem  = Object.values(this.arrElem) : this.arrElem;
   }
   // getter
   getArrElem() {

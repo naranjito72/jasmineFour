@@ -37,12 +37,18 @@ describe('FindMatches', function(){
     });
   });
 
- describe('Our "this" inside the class', function(){
-  it('Determinates that "this.arrElem" is an array of elements', function(){
+ describe('Our array of elements inside the class', function(){
+  it('Determinates that "this.arrElem" equals the parameter introduced', function(){
     expect(arrContainer.getArrElem()).toEqual(arrNumOne);
-    expect(arrContainer.getArrElem()).not.toBe(null);
-    expect(Array.isArray(arrContainer.getArrElem())).toBe(true);
   });
+  it('Checks if "this.arrElem" is not "null"', function(){
+    expect(arrContainer.getArrElem()).not.toBe(null);
+  });
+  it('Checks if "this.arrElem" is an array', function() {
+    expect(Array.isArray(arrContainer.getArrElem())).toBe(true);
+    expect(arrContainer.getArrElem()).toEqual(jasmine.any(Array));
+    expect(arrContainer.getArrElem().constructor()).toEqual(jasmine.any(Array));
+  })
  });
 
 });
