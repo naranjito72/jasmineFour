@@ -3,7 +3,8 @@ class FindMatches {
     constructor(arrElem) {
         this.arrElem = arrElem;
         // check if is object or array
-        (this.arrElem.constructor !== Array) ? this.arrElem = Object.values(this.arrElem) : this.arrElem;
+        (!Array.isArray(this.arrElem)) ? this.arrElem = Object.values(this.arrElem) : this.arrElem;
+        // (this.arrElem.constructor !== Array) ? this.arrElem  = Object.values(this.arrElem) : this.arrElem;
     }
     // getter
     getArrElem() {
